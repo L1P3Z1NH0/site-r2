@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" position="end">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon class="close-icon" aria-label="Side nav toggle icon">close</mat-icon>
+      </button>
+    <mat-nav-list>
+      <a mat-list-item href="#">Nossa história</a>
+      <a mat-list-item href="#">Serviços</a>
+      <a mat-list-item href="#">Ferramentas</a>
+      <a mat-list-item href="#">Orçamento</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <img src="assets/images/header/logo-r2.png" alt="logo da empresa r2">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="spacer"></span>
+      <a href="#">Nossa história</a>
+      <a href="#">Serviços</a>
+      <a href="#">Ferramentas</a>
+      <a href="#">Orçamento</a>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,91 @@
+form{
+  margin: 4rem 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+form, table{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mat-form-field{
+  width: 17rem !important;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: blue !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: blue;
+}
+
+button{
+  background-color: rgba(44, 154, 251, 1);
+  margin: 2rem 0;
+  width: 8rem;
+}
+
+.infoEnvio{
+  margin: 0 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.enviado{
+  color: #5cb85c;
+  text-align: center;
+}
+
+.naoEnviado{
+  color: #d9534f;
+}
+
+@media (min-width: 35em) {
+  form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .example-form{
+    max-width: 100%;
+  }
+
+  .mat-form-field{
+    width: 100% !important;
+  }
+
+  form p:nth-child(5){
+    grid-column: 1 / span 2;
+  }
+
+  form button {
+    margin: 0 4rem;
+  }
+
+  .infoEnvio{
+    margin: 0;
+  }
+
+  .enviado{
+    text-align:start;
+  }
+}

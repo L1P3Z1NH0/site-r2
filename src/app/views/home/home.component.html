@@ -1,0 +1,288 @@
+
+<div class="nav-height"></div>
+<video autoplay [muted]="'muted'" loop playsinline class="myVideo">
+  <source src="/assets/videos/background-video.mp4" type="video/mp4" />
+</video>
+
+<div class="box-start">
+  <h1 class="default-title">A Contabilidade que você precisa é com a gente</h1>
+  <p class="sub-title">
+    Tudo o que você e sua empresa precisam com relação a serviços contábeis em
+    um só lugar
+  </p>
+  <a class="button-template button-template-blue" mat-button href="#"
+    >Faça sua cotação</a
+  >
+  <a class="button-template" mat-button href="#">Saiba mais</a>
+</div>
+
+<div class="jeito-contabilidade">
+  <!-- <div class="circle"></div> -->
+
+  <div class="box-info box-info2">
+    <div class="box-info-item">
+      <img
+      src="/assets/images/home/porco.png"
+      alt="ícone de um cofrinho de porco"
+      />
+      <p>
+        Menos burocracia para sua empresa, com mais de 2 mil de lucro em impostos
+      </p>
+    </div>
+
+    <div class="box-info-item">
+      <img
+      src="/assets/images/home/stonks.png"
+      alt="ícone de setas apontadas pra cima"
+      />
+      <p>Crescendo em conjunto com 10 novos clientes mensalmente</p>
+    </div>
+  </div>
+
+  <div class="box-info">
+    <div class="box-info-item">
+      <img
+      src="/assets/images/home/mao.png"
+      alt="ícone de uma mão com um bonequinho em cima"
+      />
+      <p>Mais de 100 empresas abertas só na pandemia</p>
+    </div>
+
+    <div class="box-info-item">
+      <img
+      src="/assets/images/home/dinheiro.png"
+      alt="ícone de uma sacola de dinheiro"
+      />
+      <p>Mais de 50 mil reais investidos e depositos mensalmente</p>
+    </div>
+  </div>
+
+  <div class="box-video">
+    <h2 class="default-title default-title2">
+      Um novo jeito de fazer Contabilidade
+    </h2>
+    <p class="default-txt">
+      O mundo evoluiu e com ele a R² também, e para isso evoluimos nossos meios
+      digitais, nossa forma de conversar e nos conectamos para trazer um melhor
+      atendimento para você. <br />
+      Venha com a gente e descubra um novo jeito de fazer Contabilidade
+    </p>
+    <video class="video-player" controls>
+      <source src="/assets/videos/video-player.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<div class="box-servicos box-servicos1">
+  <h2 class="default-title default-title-l default-title2">
+    Consultoria Fiscal
+  </h2>
+  <img
+    src="assets/images/home/stonks2.png"
+    alt="ícone de homem e mulher com televisão na frente"
+  />
+  <p class="default-txt">
+    Toda a parte de elaboração da folha de pagamento, gerenciamento e a análise
+    da rotina trabalhista serão feitas por nossa equipe especializada da R² que
+    você pode confiar
+  </p>
+  <a class="button-template" mat-button href="#">Descubra mais!</a>
+</div>
+
+<div class="box-servicos box-servicos2">
+  <h2 class="default-title default-title-l default-title2">
+    Abertura de Empresa
+  </h2>
+  <img
+    src="assets/images/home/homem-levantado-celular.png"
+    alt="ícone de homem e mulher com televisão na frente"
+  />
+  <p class="default-txt">
+    Nós da R² realizamos um serviço completo para abertura e alteração de
+    empresas e condomínios, garantindo segurança e confiança do início ao fim
+  </p>
+  <a class="button-template" mat-button href="#">Acesse agora</a>
+</div>
+
+<div class="box-servicos box-servicos3">
+  <h2 class="default-title default-title-l default-title3">
+    A Contabilidade ideal
+  </h2>
+  <img
+    src="assets/images/home/homem-sentado-celular.png"
+    alt="ícone de homem e mulher com televisão na frente"
+  />
+  <p class="default-txt">
+    Com foco no presencial, nós da R² garantimos o total gerenciamento de sua
+    empresa ou pessoa física, auxiliando na tomada de decisões, e acompanhamento
+    total com relação a todos os documento necessários e garantindo a
+    consultoria tributária, trabalhista, fiscal e contábil
+  </p>
+  <a class="button-template" mat-button href="#"
+    >Venha fazer parte desta comunidade</a
+  >
+</div>
+
+<div class="parceiros">
+  <h2 class="default-title default-title3">O que nossos parceiros disseram?</h2>
+  <p class="default-txt">
+    Muitos dos nossos clientes saíram das contabilidades e vieram buscando
+    experiências reais, com pessoas reais. Veja o que eles disseram da R²
+  </p>
+
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)"
+  >
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <div class="grey"></div>
+      <div class="slide-item">
+        <p>“O atendimento ideal, com dedicação e entrega de verdade”</p>
+        <b
+          >Otávio Nitolo <br />
+          New Mode</b
+        >
+      </div>
+    </div>
+  </ngx-slick-carousel>
+</div>
+
+<div class="parceiros2">
+  <img
+    src="assets/images/home/logo-r2-preto.png"
+    alt="logo preto da empresa r2"
+  />
+  <h2 class="default-title default-title-l default-title3">Nossos Parceiros</h2>
+
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="ONLINE">
+        <div class="logos-parceiros">
+          <a href="https://mahatmaseguros.com.br/">
+            <img class="img-parceiro"
+            src="assets/images/home/parceiro1.png"
+            alt="logo da empresa mahatma"
+            />
+          </a>
+          <a href="#">
+            <img class="img-parceiro"
+            src="assets/images/home/parceiro2.png"
+            alt="logo da empresa OFS corretora"
+            />
+          </a>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="OFFLINE">
+        <div class="logos-parceiros">
+          <img
+            src="assets/images/home/ve-verde.png"
+            alt="logo verde da empresa ve"
+          />
+          <img
+            src="assets/images/home/ve-cinza.png"
+            alt="logo cinza da empresa ve"
+          />
+          <img
+            src="assets/images/home/lu-roxo.png"
+            alt="logo roxo da empresa lu"
+          />
+          <img
+            src="assets/images/home/ve-roxo.png"
+            alt="logo roxo com rosa da empresa ve"
+          />
+          <img
+            src="assets/images/home/lu-amarelo.png"
+            alt="logo amarela da empresa lu"
+          />
+          <img
+            src="assets/images/home/lu-azul.png"
+            alt="logo azul da empresa lu"
+          />
+        </div>
+      </mat-tab>
+
+      <mat-tab label="CHANNEL">
+        <div class="logos-parceiros">
+          <img
+            src="assets/images/home/ve-verde.png"
+            alt="logo verde da empresa ve"
+          />
+          <img
+            src="assets/images/home/ve-roxo.png"
+            alt="logo roxo com rosa da empresa ve"
+          />
+          <img
+            src="assets/images/home/lu-amarelo.png"
+            alt="logo amarela da empresa lu"
+          />
+          <img
+            src="assets/images/home/ve-cinza.png"
+            alt="logo cinza da empresa ve"
+          />
+          <img
+            src="assets/images/home/lu-azul.png"
+            alt="logo azul da empresa lu"
+          />
+          <img
+            src="assets/images/home/lu-roxo.png"
+            alt="logo roxo da empresa lu"
+          />
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+</div>
+
+<div class="form">
+  <h2 class="default-title default-title3">Realize um Orçamento</h2>
+  <p class="default-txt">
+    Entre em contato conosco e realizáremos agora um orçamento ideal para ti e
+    seu negócio
+  </p>
+  <app-form></app-form>
+</div>
+
+<div class="noticias">
+  <h2 class="default-title default-title-l default-title3">Últimas notícias</h2>
+  <p class="default-txt">
+    Saiba tudo o que está rolando com o mundo contábil em um só lugar.
+    Agilidade, Conforto e Segurança é na R²
+  </p>
+
+  <div class="box-noticia">
+    <h5>Notícias do mercado</h5>
+    <p>Lorem ipsum</p>
+    <a class="button-template button-template-blue" mat-button href="#"
+      >Acesse já</a
+    >
+  </div>
+
+  <div class="box-noticia">
+    <h5>A vida contábil com a Tecnologia</h5>
+    <p>Lorem ipsum</p>
+    <a class="button-template button-template-blue" mat-button href="#"
+      >Acesse já</a
+    >
+  </div>
+
+  <div class="box-noticia">
+    <h5>Controle de taxas</h5>
+    <p>Lorem ipsum</p>
+    <a class="button-template button-template-blue" mat-button href="#"
+      >Acesse já</a
+    >
+  </div>
+
+  <div class="box-noticia">
+    <h5>Governo</h5>
+    <p>Lorem ipsum</p>
+    <a class="button-template button-template-blue" mat-button href="#"
+      >Acesse já</a
+    >
+  </div>
+</div>

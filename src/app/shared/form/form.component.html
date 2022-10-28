@@ -1,0 +1,99 @@
+<form action="/assets/sendgrid/utils/enviaEmail.js" method="post" class="form" [formGroup]="form" (ngSubmit)="sendEmail($event)">
+  <p cellspacing="0">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Qual seu nome ?</mat-label>
+      <input id="nome" name="nome" maxlength="50" type="text" matInput [formControl]="validaFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="!validaFormControl.hasError('minLength') && !validaFormControl.hasError('required')">
+        Por favor insira um nome com mais de 3 letras
+      </mat-error>
+      <mat-error *ngIf="validaFormControl.hasError('required')">
+        Nome é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Qual seu email ?</mat-label>
+      <input id="email" name="email" maxlength="50" type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Por favor insira um email válido
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <p cellspacing="0">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <span matPrefix>+55 &nbsp;</span>
+      <mat-label>Qual seu telefone ?</mat-label>
+      <input id="telefone" name="telefone" maxlength="11" placeholder="(XX)91234-5678" type="tel" matInput [formControl]="telefoneFormControl"
+        [errorStateMatcher]="matcher">
+      <mat-error *ngIf="!telefoneFormControl.hasError('minLength') && !telefoneFormControl.hasError('required')">
+        Por favor insira um telefone válido
+      </mat-error>
+      <mat-error *ngIf="telefoneFormControl.hasError('required')">
+        Telefone é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Qual sua empresa ?</mat-label>
+      <input id="empresa" name="empresa" matInput type="text">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Escreva uma mensagem para nós</mat-label>
+      <textarea id="mensagem" name="mensagem" #message maxlength="256" matInput [formControl]="mensagemFormControl" [errorStateMatcher]="matcher"
+        placeholder="Ex. Gostaria de saber sobre..."></textarea>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      <mat-error *ngIf="!mensagemFormControl.hasError('minLength') && !mensagemFormControl.hasError('required')">
+        Por favor insira uma mensagem com mais de 5 letras
+      </mat-error>
+      <mat-error *ngIf="mensagemFormControl.hasError('required')">
+        Mensagem é <strong>obrigatória</strong>
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <section class="example-section">
+    <mat-checkbox formControlName="aceitarTermos" id="aceitarTermos"
+      [ngClass]="{ 'is-invalid': submitted && f['aceitarTermos'].errors }" class="example-margin" [(ngModel)]="checked"
+      [(indeterminate)]="indeterminate" [labelPosition]="labelPosition" [disabled]="disabled">
+      Eu li e aceito todos os termos de <br> <a href="#">Serviço e Políticas de Privacidade * (LGPD)</a>
+    </mat-checkbox>
+    <mat-error *ngIf="submitted && f['aceitarTermos'].errors">
+      É necessário que os termos sejam aceitos
+    </mat-error>
+  </section>
+
+  <button [disabled]="!form.valid" (click)="enviando = true;" mat-raised-button>Envie agora!</button>
+
+  <div class="boxEnvio" *ngIf="enviando">
+    <p class="infoEnvio">
+      Enviando formulário ...
+    </p>
+  </div>
+
+  <div *ngIf="mostra">
+    <div class="boxEnvio" *ngIf="validaEnvio; else elseBlock">
+      <p class="infoEnvio enviado">
+        Formulário enviado com sucesso
+      </p>
+    </div>
+    <ng-template #elseBlock>
+      <div class="boxEnvio">
+        <p class="infoEnvio naoEnviado">
+          Não foi possível enviar as informações do formulário, por favor tente novamente
+        </p>
+      </div>
+    </ng-template>
+  </div>
+</form>
