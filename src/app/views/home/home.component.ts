@@ -8,11 +8,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   slides = [
-    { img: 'https://via.placeholder.com/600.png/09f/fff' },
-    { img: 'https://via.placeholder.com/600.png/021/fff' },
-    { img: 'https://via.placeholder.com/600.png/321/fff' },
-    { img: 'https://via.placeholder.com/600.png/422/fff' },
-    { img: 'https://via.placeholder.com/600.png/654/fff' },
+    { id: 1, name:"MAHATMA"},
+    { id: 2, name:"OFS"},
   ];
   slideConfig = {
     slidesToShow: 2,
